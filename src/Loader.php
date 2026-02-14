@@ -7,12 +7,14 @@ namespace SwayamAiChatbot;
 defined('ABSPATH') || exit;
 
 use SwayamAiChatbot\Admin\SettingsPage;
+use SwayamAiChatbot\Api\ChatEndpoint;
 use SwayamAiChatbot\Embedding\SyncManager;
 
 class Loader
 {
     private ?SettingsPage $settingsPage = null;
     private ?SyncManager $syncManager = null;
+    private ?ChatEndpoint $chatEndpoint = null;
 
     public function init(): void
     {
@@ -29,6 +31,9 @@ class Loader
 
         // Embedding and sync
         $this->syncManager = new SyncManager();
+
+        // REST API
+        $this->chatEndpoint = new ChatEndpoint();
     }
 
     private function registerHooks(): void
