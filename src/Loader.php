@@ -7,10 +7,12 @@ namespace SwayamAiChatbot;
 defined('ABSPATH') || exit;
 
 use SwayamAiChatbot\Admin\SettingsPage;
+use SwayamAiChatbot\Embedding\SyncManager;
 
 class Loader
 {
     private ?SettingsPage $settingsPage = null;
+    private ?SyncManager $syncManager = null;
 
     public function init(): void
     {
@@ -24,6 +26,9 @@ class Loader
         if (is_admin()) {
             $this->settingsPage = new SettingsPage();
         }
+
+        // Embedding and sync
+        $this->syncManager = new SyncManager();
     }
 
     private function registerHooks(): void
@@ -61,5 +66,10 @@ class Loader
     public function getSettings(): array
     {
         return get_option('swayam_ai_chatbot_settings', []);
+    }
+
+    public function getSyncManager(): ?SyncManager
+    {
+        return $this->syncManager;
     }
 }
