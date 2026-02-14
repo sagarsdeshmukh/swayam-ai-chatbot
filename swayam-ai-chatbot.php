@@ -19,6 +19,27 @@ define('SWAYAM_AI_CHATBOT_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('SWAYAM_AI_CHATBOT_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('SWAYAM_AI_CHATBOT_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
+// Load Composer autoloader
+$swayam_ai_chatbot_autoloader = SWAYAM_AI_CHATBOT_PLUGIN_DIR . 'vendor/autoload.php';
+if (file_exists($swayam_ai_chatbot_autoloader)) {
+    require_once $swayam_ai_chatbot_autoloader;
+}
+
+// Initialize plugin
+add_action('plugins_loaded', function () {
+    if (!class_exists('SwayamAiChatbot\Loader')) {
+        add_action('admin_notices', function () {
+            echo '<div class="notice notice-error"><p>';
+            echo esc_html__('Swayam AI Chatbot: Please run "composer install" in the plugin directory.', 'swayam-ai-chatbot');
+            echo '</p></div>';
+        });
+        return;
+    }
+
+    $loader = new SwayamAiChatbot\Loader();
+    $loader->init();
+});
+
 // Activation hook
 register_activation_hook(__FILE__, function () {
     // Set default options

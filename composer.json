@@ -1,0 +1,22 @@
+{
+    "name": "your-vendor/swayam-ai-chatbot",
+    "description": "WordPress Swayam AI Chatbot plugin using LLPhant, Llama 3.2, and Elasticsearch",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": "^8.2",
+        "theodo-group/llphant": "^0.11.12",
+        "elasticsearch/elasticsearch": "^8.19"
+    },
+    "autoload": {
+        "psr-4": {
+            "SwayamAiChatbot\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        },
+        "optimize-autoloader": true
+    }
+}
