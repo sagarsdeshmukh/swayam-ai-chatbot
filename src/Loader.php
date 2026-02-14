@@ -9,12 +9,16 @@ defined('ABSPATH') || exit;
 use SwayamAiChatbot\Admin\SettingsPage;
 use SwayamAiChatbot\Api\ChatEndpoint;
 use SwayamAiChatbot\Embedding\SyncManager;
+use SwayamAiChatbot\Frontend\Shortcode;
+use SwayamAiChatbot\Frontend\FloatingWidget;
 
 class Loader
 {
     private ?SettingsPage $settingsPage = null;
     private ?SyncManager $syncManager = null;
     private ?ChatEndpoint $chatEndpoint = null;
+    private ?Shortcode $shortcode = null;
+    private ?FloatingWidget $floatingWidget = null;
 
     public function init(): void
     {
@@ -34,6 +38,10 @@ class Loader
 
         // REST API
         $this->chatEndpoint = new ChatEndpoint();
+
+        // Frontend components
+        $this->shortcode = new Shortcode();
+        $this->floatingWidget = new FloatingWidget();
     }
 
     private function registerHooks(): void

@@ -1,0 +1,45 @@
+.swayam-ai-chatbot-sync-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 15px 20px;
+    max-width: 600px;
+}
+
+.swayam-ai-chatbot-sync-section p {
+    margin: 10px 0;
+}
+
+#swayam-ai-chatbot-sync-status {
+    margin-left: 10px;
+    font-style: italic;
+}
+
+#swayam-ai-chatbot-sync-status.success {
+    color: #46b450;
+}
+
+#swayam-ai-chatbot-sync-status.error {
+    color: #dc3232;
+}
+
+#swayam-ai-chatbot-sync-btn:disabled,
+#swayam-ai-chatbot-test-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.swayam-ai-chatbot-connection-results {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.swayam-ai-chatbot-connection-results .success {
+    color: #46b450;
+}
+
+.swayam-ai-chatbot-connection-results .error {
+    color: #dc3232;
+}

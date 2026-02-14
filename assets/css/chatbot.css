@@ -1,0 +1,339 @@
+/* Swayam AI Chatbot Styles */
+
+/* CSS Variables for easy customization */
+:root {
+    --swayam-ai-chatbot-primary: #80d643;
+    --swayam-ai-chatbot-primary-hover: #6bc234;
+    --swayam-ai-chatbot-bg: #ffffff;
+    --swayam-ai-chatbot-text: #333333;
+    --swayam-ai-chatbot-text-light: #666666;
+    --swayam-ai-chatbot-border: #e0e0e0;
+    --swayam-ai-chatbot-user-bg: #e3f2fd;
+    --swayam-ai-chatbot-bot-bg: #f5f5f5;
+    --swayam-ai-chatbot-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --swayam-ai-chatbot-radius: 12px;
+}
+
+/* Base Widget Styles */
+.swayam-ai-chatbot-widget {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--swayam-ai-chatbot-text);
+    background: var(--swayam-ai-chatbot-bg);
+    border: 1px solid var(--swayam-ai-chatbot-border);
+    border-radius: var(--swayam-ai-chatbot-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Inline Mode (Shortcode) */
+.swayam-ai-chatbot-widget[data-mode="inline"] {
+    max-width: 600px;
+    height: 500px;
+    margin: 20px 0;
+}
+
+/* Floating Mode */
+.swayam-ai-chatbot-widget[data-mode="floating"] {
+    width: 380px;
+    height: 520px;
+    max-height: calc(100vh - 120px);
+}
+
+/* Floating Container */
+.swayam-ai-chatbot-floating-container {
+    position: fixed;
+    bottom: 90px;
+    z-index: 999998;
+    box-shadow: var(--swayam-ai-chatbot-shadow);
+    border-radius: var(--swayam-ai-chatbot-radius);
+}
+
+/* Header */
+.swayam-ai-chatbot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--swayam-ai-chatbot-primary);
+    color: white;
+}
+
+.swayam-ai-chatbot-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.swayam-ai-chatbot-close {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.swayam-ai-chatbot-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Messages Container */
+.swayam-ai-chatbot-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Welcome Message */
+.swayam-ai-chatbot-welcome {
+    text-align: center;
+    color: var(--swayam-ai-chatbot-text-light);
+    padding: 20px;
+}
+
+.swayam-ai-chatbot-welcome p {
+    margin: 0;
+}
+
+/* Message Bubbles */
+.swayam-ai-chatbot-message {
+    max-width: 85%;
+    padding: 12px 16px;
+    border-radius: 16px;
+    word-wrap: break-word;
+}
+
+.swayam-ai-chatbot-message-user {
+    align-self: flex-end;
+    background: var(--swayam-ai-chatbot-user-bg);
+    border-bottom-right-radius: 4px;
+}
+
+.swayam-ai-chatbot-message-bot {
+    align-self: flex-start;
+    background: var(--swayam-ai-chatbot-bot-bg);
+    border-bottom-left-radius: 4px;
+}
+
+.swayam-ai-chatbot-message-bot p {
+    margin: 0 0 10px 0;
+}
+
+.swayam-ai-chatbot-message-bot p:last-child {
+    margin-bottom: 0;
+}
+
+/* Typing Indicator */
+.swayam-ai-chatbot-typing {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 16px;
+    background: var(--swayam-ai-chatbot-bot-bg);
+    border-radius: 16px;
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+}
+
+.swayam-ai-chatbot-typing-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--swayam-ai-chatbot-text-light);
+    border-radius: 50%;
+    animation: swayam-ai-chatbot-bounce 1.4s infinite ease-in-out;
+}
+
+.swayam-ai-chatbot-typing-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.swayam-ai-chatbot-typing-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes swayam-ai-chatbot-bounce {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Sources */
+.swayam-ai-chatbot-sources {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--swayam-ai-chatbot-border);
+    font-size: 13px;
+}
+
+.swayam-ai-chatbot-sources-title {
+    font-weight: 600;
+    color: var(--swayam-ai-chatbot-text-light);
+    margin-bottom: 8px;
+}
+
+.swayam-ai-chatbot-sources-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.swayam-ai-chatbot-sources-list li {
+    margin-bottom: 6px;
+}
+
+.swayam-ai-chatbot-sources-list a {
+    color: var(--swayam-ai-chatbot-primary);
+    text-decoration: none;
+}
+
+.swayam-ai-chatbot-sources-list a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message */
+.swayam-ai-chatbot-error {
+    color: #d32f2f;
+    background: #ffebee;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+/* Form */
+.swayam-ai-chatbot-form {
+    padding: 16px;
+    border-top: 1px solid var(--swayam-ai-chatbot-border);
+    background: var(--swayam-ai-chatbot-bg);
+}
+
+.swayam-ai-chatbot-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f5f5;
+    border-radius: 24px;
+    padding: 4px 4px 4px 16px;
+}
+
+.swayam-ai-chatbot-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 8px 0;
+    outline: none;
+    color: var(--swayam-ai-chatbot-text);
+}
+
+.swayam-ai-chatbot-input::placeholder {
+    color: var(--swayam-ai-chatbot-text-light);
+}
+
+.swayam-ai-chatbot-submit {
+    background: var(--swayam-ai-chatbot-primary);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+}
+
+.swayam-ai-chatbot-submit:hover {
+    background: var(--swayam-ai-chatbot-primary-hover);
+}
+
+.swayam-ai-chatbot-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Floating Toggle Button */
+.swayam-ai-chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    z-index: 999999;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--swayam-ai-chatbot-primary);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--swayam-ai-chatbot-shadow);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.swayam-ai-chatbot-toggle:hover {
+    background: var(--swayam-ai-chatbot-primary-hover);
+    transform: scale(1.05);
+}
+
+.swayam-ai-chatbot-toggle[aria-expanded="true"] .swayam-ai-chatbot-toggle-icon-open {
+    display: none;
+}
+
+.swayam-ai-chatbot-toggle[aria-expanded="true"] .swayam-ai-chatbot-toggle-icon-close {
+    display: block !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .swayam-ai-chatbot-floating-container {
+        left: 10px !important;
+        right: 10px !important;
+        bottom: 80px;
+        width: auto;
+    }
+
+    .swayam-ai-chatbot-widget[data-mode="floating"] {
+        width: 100%;
+        height: 60vh;
+        max-height: none;
+    }
+
+    .swayam-ai-chatbot-toggle {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Scrollbar Styling */
+.swayam-ai-chatbot-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.swayam-ai-chatbot-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.swayam-ai-chatbot-messages::-webkit-scrollbar-thumb {
+    background: var(--swayam-ai-chatbot-border);
+    border-radius: 3px;
+}
+
+.swayam-ai-chatbot-messages::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}
