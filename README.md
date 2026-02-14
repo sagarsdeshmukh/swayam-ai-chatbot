@@ -1,0 +1,1 @@
+# Swayam AI Chatbot - WordPress Plugin
