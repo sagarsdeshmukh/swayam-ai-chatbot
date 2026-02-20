@@ -1,5 +1,5 @@
 {
-    "name": "your-vendor/swayam-ai-chatbot",
+    "name": "sagarsdeshmukh/swayam-ai-chatbot",
     "description": "WordPress Swayam AI Chatbot plugin using LLPhant, Llama 3.2, and Elasticsearch",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
