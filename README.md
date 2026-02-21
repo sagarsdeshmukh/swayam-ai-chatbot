@@ -6,6 +6,14 @@ A WordPress plugin that provides an AI-powered chatbot using RAG (Retrieval-Augm
 
 Swayam (स्वयं)—an ancient Sanskrit word meaning "self." Your content. Your knowledge. Autonomously intelligent.
 
+## Requirements
+
+- **PHP**: 8.2 or higher
+- **WordPress**: 6.0 or higher
+- **Ollama**: Running locally with Llama 3.2 model
+- **Elasticsearch**: 9.x with vector search support
+- **Composer**: For dependency management
+
 ## Installation
 
 **1. Install the Plugin**
