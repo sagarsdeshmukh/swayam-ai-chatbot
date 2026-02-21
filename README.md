@@ -5,3 +5,70 @@ A WordPress plugin that provides an AI-powered chatbot using RAG (Retrieval-Augm
 ## Why "Swayam"?
 
 Swayam (स्वयं)—an ancient Sanskrit word meaning "self." Your content. Your knowledge. Autonomously intelligent.
+
+## Installation
+
+**1. Install the Plugin**
+
+```bash
+# Navigate to your WordPress plugins directory
+cd /path/to/wordpress/wp-content/plugins/
+
+# Clone or copy the plugin
+cp -r /path/to/swayam-ai-chatbot ./
+
+# Install dependencies
+cd swayam-ai-chatbot
+composer install
+```
+
+**2. Install and Start Ollama**
+
+You can install [Llama 3.2](https://www.llama.com/) using [ollama](https://ollama.com/).
+
+For installing ollama on Linux, run the following command:
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+For macOS or Windows use the [download](https://ollama.com/download) page.
+
+It is recommended to install Llama 3.2-1B or 3B for optimized CPU/GPU, and RAM usage.
+
+For installing Llama3.2-3B use the following command:
+
+```bash
+ollama run llama3.2:3b
+```
+
+You can start interacting to the LLama3.2 model using a chat. To exit, write `/bye` in the chat.
+
+**3. Install and Start Elasticsearch**
+
+```bash
+curl -fsSL https://elastic.co/start-local | sh
+```
+
+This script will install Elasticsearch and Kibana using a `docker-compose.yml` file stored in
+`elastic-start-local` folder.
+
+Elasticsearch and Kibana will run locally at http://localhost:9200 and http://localhost:5601.
+
+All the settings of Elasticsearch and Kibana are stored in the `elastic-start-local/.env` file.
+
+You can use the `start` and `stop` commands available in the `elastic-start-local` folder.
+
+To **stop** the Elasticsearch and Kibana Docker services, use the `stop` command:
+
+```bash
+cd elastic-start-local
+./stop.sh
+```
+
+To **start** the Elasticsearch and Kibana Docker services, use the `start` command:
+
+```bash
+cd elastic-start-local
+./start.sh
+```
