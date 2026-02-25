@@ -6,6 +6,8 @@ A WordPress plugin that provides an AI-powered chatbot using RAG (Retrieval-Augm
 
 Swayam (स्वयं)—an ancient Sanskrit word meaning "self." Your content. Your knowledge. Autonomously intelligent.
 
+**[Download plugin on wordpress.org](https://wordpress.org/plugins/swayam-ai-chatbot/)**
+
 ## Requirements
 
 - **PHP**: 8.2 or higher
