@@ -1,10 +1,25 @@
 # Swayam AI Chatbot - WordPress Plugin
 
+![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-blue)
+![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-blue)
+![License](https://img.shields.io/badge/License-GPL%20v3-green)
+
 A WordPress plugin that provides an AI-powered chatbot using RAG (Retrieval-Augmented Generation) architecture with LLPhant, Llama 3.2 (via Ollama), and Elasticsearch.
 
 ## Why "Swayam"?
 
 Swayam (स्वयं)—an ancient Sanskrit word meaning "self." Your content. Your knowledge. Autonomously intelligent.
+
+## Features
+
+- **RAG-Powered Q&A**: Answers questions based on your WordPress content
+- **Automatic Content Indexing**: Syncs posts, pages, and custom post types to Elasticsearch
+- **Auto-Sync on Publish**: Automatically updates the index when content is published/updated/deleted
+- **Customizable Chat Interface**: Shortcode and floating widget options
+- **Admin Dashboard**: Easy configuration with connection testing
+- **REST API**: Programmatic access to the chatbot
+- **Rate Limiting**: Built-in protection against spam
+- **PHP 8.2+ Compatible**: Works with PHP 8.2, 8.3, and later versions
 
 **[Download plugin on wordpress.org](https://wordpress.org/plugins/swayam-ai-chatbot/)**
 
