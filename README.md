@@ -97,3 +97,13 @@ To **start** the Elasticsearch and Kibana Docker services, use the `start` comma
 cd elastic-start-local
 ./start.sh
 ```
+
+## License
+
+[GPL v3](https://github.com/sagarsdeshmukh/swayam-ai-chatbot/blob/main/LICENSE)
+
+## Credits
+
+- [LLPhant](https://github.com/LLPhant/LLPhant) - PHP LLM framework
+- [Ollama](https://ollama.com/) - Local LLM runtime
+- [Elasticsearch](https://www.elastic.co/elasticsearch/) - Vector database
